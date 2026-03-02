@@ -55,7 +55,7 @@ static void canvas_update_proc(Layer *layer, GContext *ctx) {
   GPoint center = GPoint(CENTER_X, CENTER_Y);
 
   // ── Background: black bezel ───────────────────────────────────────────────
-  graphics_context_set_fill_color(ctx, GColorBlack);
+  graphics_context_set_fill_color(ctx, GColorWhite);
   graphics_fill_rect(ctx, bounds, 0, GCornerNone);
 
   // ── Dial: white filled circle ──────────────────────────────────────────────
@@ -196,7 +196,7 @@ static void init(void) {
     .load   = window_load,
     .unload = window_unload,
   });
-  window_set_background_color(s_window, GColorBlack);
+  window_set_background_color(s_window, GColorWhite);
   window_stack_push(s_window, true);
 
   // Subscribe to second-level ticks for the second hand
